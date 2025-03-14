@@ -3,5 +3,15 @@
   connection: local
   become: yes
   
+  pre_tasks:
+    - name: Verifica che l'hostname sia consentito
+      include_vars:
+        file: vars/allowed_hosts.yml
+      
+    - name: Controlla se l'hostname è presente nella lista degli host consentiti
+      fail:
+        msg: "Questo playbook può essere eseguito solo sugli host autorizzati."
+      when: ansible_hostname not in allowed_hosts
+  
   tasks:
     - include_tasks: tasks/main.yml
