@@ -3,8 +3,7 @@
 - name: Crea l'utente ubuadmin
   user:
     name: ubuadmin
-    # Hash SHA-512 della password "PasswordUA!"
-    password: "$6$rounds=656000$kKQG59I4ZDDq/bmU$31JtmUwqL12KDQ3I0U8UGQdLyBcHmRaDQKHPAtpXCLXXYnHrOb.iN3.JUjvEKEsM8PdN.ncL1pUgdcwZsyxBx1"
+    password: "$6$0ZoErgjbXG9y54dO$bZl6YSiy4ev3GvtCo.jPyP8wMvGuxWTLCF3sfFNwFkL8yv1K4fTIRwN9y6bJl2c04f0yYNE1tzYl7HGIQpLA51"
     shell: /bin/bash
     state: present
     create_home: yes
