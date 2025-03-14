@@ -1,0 +1,6 @@
+---
+# Lista degli hostname autorizzati ad eseguire i playbook
+allowed_hosts:
+  - ubuntu100
+  - ubuntu101
+  - ubuntu102
