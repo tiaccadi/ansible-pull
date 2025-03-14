@@ -1,0 +1,17 @@
+---
+# Crea l'utente ubuadmin con privilegi sudo
+- name: Crea l'utente ubuadmin
+  user:
+    name: ubuadmin
+    # Hash SHA-512 della password "PasswordUA!"
+    password: "$6$rounds=656000$kKQG59I4ZDDq/bmU$31JtmUwqL12KDQ3I0U8UGQdLyBcHmRaDQKHPAtpXCLXXYnHrOb.iN3.JUjvEKEsM8PdN.ncL1pUgdcwZsyxBx1"
+    shell: /bin/bash
+    state: present
+    create_home: yes
+
+# Aggiungi ubuadmin al gruppo sudo
+- name: Aggiungi ubuadmin al gruppo sudo
+  user:
+    name: ubuadmin
+    groups: sudo
+    append: yes
