@@ -1,0 +1,16 @@
+---
+# Crea il gruppo ansible
+- name: Crea il gruppo gruppo-ansible
+  group:
+    name: gruppo-ansible
+    state: present
+
+# Crea il file sudoers per il gruppo
+- name: Crea il file sudoers per gruppo-ansible
+  copy:
+    dest: /etc/sudoers.d/gruppo-ansible
+    content: "%gruppo-ansible ALL=(ALL) NOPASSWD: /usr/bin/apt upgrade, /usr/bin/apt-get upgrade"
+    owner: root
+    group: root
+    mode: 0440
+    validate: "/usr/sbin/visudo -cf %s"
