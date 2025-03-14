@@ -4,3 +4,4 @@ allowed_hosts:
   - ubuntu100
   - ubuntu101
   - ubuntu102
+  - ubuntu02
